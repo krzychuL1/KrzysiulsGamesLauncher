@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>images\Icon.ico</ApplicationIcon>
+    <AssemblyName>KrzysiulsGamesLauncher</AssemblyName>
+    <RootNamespace>KrzysiulsGamesLauncher</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="EdSplash.png" />
+    <None Remove="ikona.png" />
+    <None Remove="images\Icon.ico" />
+    <None Remove="images\LauncherBackground.png" />
+    <None Remove="logo1.png" />
+    <None Remove="logo2.png" />
+    <None Remove="settings.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DeltaCompressionDotNet" Version="2.0.0" />
+    <PackageReference Include="NuGet.CommandLine" Version="5.8.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="squirrel.windows" Version="1.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="EdSplash.png" />
+    <Resource Include="ikona.png" />
+    <Resource Include="images\Icon.ico" />
+    <Resource Include="logo1.png" />
+    <Resource Include="logo2.png" />
+    <Resource Include="settings.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+	<PropertyGroup>
+		<NugetTools>$(PkgNuGet_CommandLine)\tools</NugetTools>
+		<SquirrelTools>$(Pkgsquirrel_windows)\tools</SquirrelTools>
+
+		<Version>1.0.0</Version>
+
+		<NuspecFile>$(SolutionDir)GameLauncher\GameLauncher.nuspec</NuspecFile>
+
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+		<Description>Launcher do gier studia KrzysiulsGamesLauncher</Description>
+
+		<RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+	</PropertyGroup>
+
+	<Target Name="GenerateRelease" AfterTargets="AfterBuild" Condition="$(Configuration) == Release">
+		<XmlPeek XmlInputPath="$(NuspecFile)" Query="/package/metadata/id/text()">
+			<Output TaskParameter="Result" ItemName="ID" />
+		</XmlPeek>
+
+		<Exec Command="$(NugetTools)\NuGet.exe pack $(NuspecFile) -Version $(Version) -Properties Configuration=Release -OutputDirectory $(SolutionDir)Deployment\GeneratedNugets" />
+
+		<Exec Command="$(SquirrelTools)\Squirrel.exe --releasify $(SolutionDir)Deployment\GeneratedNugets\@(ID).$(Version).nupkg --releaseDir=$(SolutionDir)Deployment\Releases" />
+	</Target>
+
+
+</Project>

@@ -1,0 +1,164 @@
+﻿<Window x:Class="GameLauncher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameLauncher"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ContentRendered="Window_ContentRendered"
+        Title="Krzysiuls Games Launcher" Height="879" Width="1586" Background="#FF474747" Icon="/images/Icon.ico" ResizeMode="NoResize" Loaded="Window_Loaded">
+
+
+
+    <Grid Visibility="Visible">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="31*"/>
+            <ColumnDefinition Width="509*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="109*"/>
+            <RowDefinition Height="171*"/>
+
+        </Grid.RowDefinitions>
+
+
+
+
+
+        <Grid Visibility="Collapsed" Name="cs" Margin="12,0,0,0" Grid.RowSpan="2" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="209*"/>
+                <RowDefinition Height="71*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Name="VersionText" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="20" Foreground="White" Margin="0,0,5,4" FontWeight="Bold" Grid.Row="1"/>
+            <Button Name="PlayButton" Content="Sprawdź aktualizację" Click="PlayButton_Click" Height="60" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,141,0,0" MinWidth="150" Padding="10,1,10,1" BorderBrush="#FF474747" Background="#FF474747" Grid.Row="1" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button Name="update" Content="Sprawdź aktualizację lub pobierz" Click="update_Click" Height="60" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,141,0,0" MinWidth="150" Padding="10,1,10,1" BorderBrush="#FF474747" Background="#FF474747" Grid.Row="1" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock Visibility="Collapsed" Name="wersjatext" HorizontalAlignment="Left" Margin="1360,0,0,5" Text="Wersja:" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="26" Width="78" Foreground="White" FontWeight="Bold" FontSize="20" Grid.Row="1"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="153" Width="688" Foreground="White" FontSize="100" FontWeight="Bold" Text="Counter Strike"/>
+            <ProgressBar Minimum="0" Maximum="100" HorizontalAlignment="Center" Height="17" Margin="0,184,0,0" VerticalAlignment="Top" Width="368" Grid.Row="1" Name="progressBar1" Visibility="Collapsed" Value="0"/>
+            <TextBlock Name="inst" HorizontalAlignment="Center" Margin="0,141,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Pobieranie gry..." VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Visibility="Collapsed"/>
+
+
+        </Grid>
+
+        <Grid Visibility="Collapsed" Name="gra2" Margin="12,0,0,0" Grid.RowSpan="2" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="209*"/>
+                <RowDefinition Height="71*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Visibility="Collapsed" Name="wersjatext2" HorizontalAlignment="Left" Margin="1360,0,0,5" Text="Wersja:" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="26" Width="78" Foreground="White" FontWeight="Bold" FontSize="20" Grid.Row="1"/>
+            <ProgressBar Minimum="0" Maximum="100" HorizontalAlignment="Center" Height="17" Margin="0,184,0,0" VerticalAlignment="Top" Width="368" Grid.Row="1" Name="progressBar2" Visibility="Collapsed" Value="0"/>
+            <TextBlock Name="inst2" HorizontalAlignment="Center" Margin="0,141,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Pobieranie gry..." VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Visibility="Collapsed"/>
+            <Button Name="PlayButton2" Content="Sprawdź aktualizację" Click="PlayButton_Click2" Height="60" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,141,0,0" MinWidth="150" Padding="10,1,10,1" BorderBrush="#FF474747" Background="#FF474747" Grid.Row="1" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button Name="update2" Content="Sprawdź aktualizację lub pobierz" Click="update_Click2" Height="60" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,141,0,0" MinWidth="150" Padding="10,1,10,1" BorderBrush="#FF474747" Background="#FF474747" Grid.Row="1" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock Name="VersionText2" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="20" Foreground="White" Margin="0,0,5,4" FontWeight="Bold" Grid.Row="1"/>
+            <Image HorizontalAlignment="Left" Height="478" Margin="317,0,0,0" VerticalAlignment="Center" Width="888" Source="/logo1.png"/>
+
+
+
+
+
+
+
+
+        </Grid>
+
+        <Grid Visibility="Visible" Name="ustawieniawin" Margin="12,0,0,0" Grid.RowSpan="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="282*"/>
+                <ColumnDefinition Width="1201*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="209*"/>
+                <RowDefinition Height="71*"/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Left" Margin="221,180,0,0" TextWrapping="Wrap" Text="Ustawienia" VerticalAlignment="Top" Foreground="White" FontSize="100" Width="477" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left" Margin="329,318,0,0" TextWrapping="Wrap" Text="Wkrótce dostępne" VerticalAlignment="Top" Foreground="White" FontSize="30" Width="261" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left" Margin="-10,191,0,0" Text="Autor kodu: Tom Weiland" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="134" Foreground="White" FontWeight="Bold" Grid.Row="1" FontSize="9" RenderTransformOrigin="0.497,0.521"/>
+            <TextBlock HorizontalAlignment="Left" Margin="-9,9,0,0" Text="Pamiętaj o aktualizacji launchera" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="189" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.497,0.521"/>
+            <TextBlock HorizontalAlignment="Left" Margin="-9,25,0,0" Text="Aktualna wersja:" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="147" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.497,0.521"/>
+            <TextBlock Name="launcherwersja" HorizontalAlignment="Left" Margin="86,25,0,0" Text="1.0.0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="77" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.497,0.521"/>
+            <Button Content="Sprawdź Aktualizację" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Width="132" Click="Button_Click_2"/>
+            <Button Name="updatebutton" Content="Pobierz aktualizację" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="132" IsEnabled="False" Click="updatebutton_Click"/>
+        </Grid>
+
+
+
+
+        <DockPanel Grid.RowSpan="2" Margin="0,0,1483,0" Background="#FF353535" Grid.ColumnSpan="2" />
+        <Button Name="csbtn" Margin="10,10,10,256" Background="#FF353535" Opacity="0.995" Click="Button_Click">
+            <Image Source="/images/Icon.ico" Width="38" />
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="LightBlue" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="#FF474747" BorderThickness="2">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF474747" TargetName="Border" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+
+        </Button>
+        <Button Name="efyhbtn" Margin="10,89,10,177" Background="{x:Null}" Opacity="0.995" Click="Button_Click_1">
+            <Image Source="/logo2.png" Width="68" Height="51" RenderTransformOrigin="0.496,0.521" />
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="LightBlue" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="#FF474747" BorderThickness="2">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF474747" TargetName="Border" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+
+        </Button>
+        <Button  Margin="14,452,14,10" Background="{x:Null}" Opacity="0.995" Click="ustawienia" Grid.Row="1">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF707070" Opacity="0"/>
+            </Button.BorderBrush>
+            <Image Source="/settings.png" Width="47" Height="42" RenderTransformOrigin="0.496,0.521" />
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="LightBlue" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="#FF474747" BorderThickness="2">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF474747" TargetName="Border" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</Window>

@@ -371,6 +371,7 @@ namespace GameLauncher
                 updateimg3.Visibility = Visibility.Visible;
                 updatetext3.Visibility = Visibility.Visible;
                 updatebutton.IsEnabled = true;
+                updatebutton.Visibility = Visibility.Visible;
             }
             else
             {
@@ -381,6 +382,7 @@ namespace GameLauncher
                 updateimg3.Visibility = Visibility.Collapsed;
                 updatetext3.Visibility = Visibility.Collapsed;
                 updatebutton.IsEnabled = false;
+                updatebutton.Visibility = Visibility.Collapsed;
             }
         }
 

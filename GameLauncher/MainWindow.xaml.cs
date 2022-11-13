@@ -354,22 +354,18 @@ namespace GameLauncher
             CheckForUpdates2();
             update2.Visibility = Visibility.Collapsed;
         }
-
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             manager = await UpdateManager
             .GitHubUpdateManager(@"https://github.com/krzychuL1/KrzysiulsGamesLauncher");
             launcherwersja.Text = manager.CurrentlyInstalledVersion().ToString();
-        }
 
-        private async void Button_Click_2(object sender, RoutedEventArgs e)
-        {
             var updateInfo = await manager.CheckForUpdate();
 
             if (updateInfo.ReleasesToApply.Count > 0)
             {
                 updatebutton.IsEnabled = true;
-            }    
+            }
             else
             {
                 updatebutton.IsEnabled = false;
@@ -381,6 +377,7 @@ namespace GameLauncher
             await manager.UpdateApp();
             MessageBox.Show("Aplikacja pomyślnie zaktualizowana!");
         }
+
     }
 
     struct Version

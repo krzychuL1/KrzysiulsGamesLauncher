@@ -26,7 +26,7 @@
 
 
 
-        <Grid Visibility="Collapsed" Name="cs" Margin="12,0,0,0" Grid.RowSpan="2" Grid.Column="1">
+        <Grid Visibility="Visible" Name="cs" Margin="12,0,0,0" Grid.RowSpan="2" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="209*"/>
                 <RowDefinition Height="71*"/>
@@ -65,7 +65,7 @@
 
         </Grid>
 
-        <Grid Visibility="Visible" Name="ustawieniawin" Margin="12,0,0,0" Grid.RowSpan="2" Grid.Column="1">
+        <Grid Visibility="Collapsed" Name="ustawieniawin" Margin="12,0,0,0" Grid.RowSpan="2" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="282*"/>
                 <ColumnDefinition Width="1201*"/>
@@ -79,8 +79,7 @@
             <TextBlock HorizontalAlignment="Left" Margin="-10,191,0,0" Text="Autor kodu: Tom Weiland" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="134" Foreground="White" FontWeight="Bold" Grid.Row="1" FontSize="9" RenderTransformOrigin="0.497,0.521"/>
             <TextBlock HorizontalAlignment="Left" Margin="-9,9,0,0" Text="Pamiętaj o aktualizacji launchera" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="189" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.497,0.521"/>
             <TextBlock HorizontalAlignment="Left" Margin="-9,25,0,0" Text="Aktualna wersja:" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="147" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.497,0.521"/>
-            <TextBlock Name="launcherwersja" HorizontalAlignment="Left" Margin="86,25,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="77" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.497,0.521"/>
-            <Button Content="Sprawdź Aktualizację" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Width="132" Click="Button_Click_2"/>
+            <TextBlock Name="launcherwersja" HorizontalAlignment="Left" Margin="86,25,0,0" Text="1.0.0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="77" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.497,0.521"/>
             <Button Name="updatebutton" Content="Pobierz aktualizację" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="132" IsEnabled="False" Click="updatebutton_Click"/>
         </Grid>
 

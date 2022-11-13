@@ -359,13 +359,12 @@ namespace GameLauncher
             manager = await UpdateManager
             .GitHubUpdateManager(@"https://github.com/krzychuL1/KrzysiulsGamesLauncher");
             launcherwersja.Text = manager.CurrentlyInstalledVersion().ToString();
-            
-            MessageBox.Show("Wykryto aktualizację! Przejdź do ustawień aby zaktualizować launcher.");
 
             var updateInfo = await manager.CheckForUpdate();
 
             if (updateInfo.ReleasesToApply.Count > 0)
             {
+                MessageBox.Show("Wykryto aktualizację! Przejdź do ustawień aby zaktualizować launcher.");
                 updatebutton.IsEnabled = true;
             }
             else

@@ -39,7 +39,8 @@
             <TextBlock HorizontalAlignment="Center" Margin="0,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="153" Width="688" Foreground="White" FontSize="100" FontWeight="Bold" Text="Counter Strike"/>
             <ProgressBar Minimum="0" Maximum="100" HorizontalAlignment="Center" Height="17" Margin="0,184,0,0" VerticalAlignment="Top" Width="368" Grid.Row="1" Name="progressBar1" Visibility="Collapsed" Value="0"/>
             <TextBlock Name="inst" HorizontalAlignment="Center" Margin="0,141,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Pobieranie gry..." VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Visibility="Collapsed"/>
-
+            <TextBlock Visibility="Collapsed" Name="updatetext3" Grid.Column="1" HorizontalAlignment="Left" Margin="1019,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="165" FontFamily="Arial Black" Foreground="White" FontSize="13"><Run Language="pl-pl" Text="Dostępna aktualizacja!"/></TextBlock>
+            <Image Visibility="Collapsed" Name="updateimg3" Grid.Column="1" HorizontalAlignment="Left" Height="16" Margin="998,7,0,0" VerticalAlignment="Top" Width="18" Source="/pobrane.png"/>
 
         </Grid>
 
@@ -55,6 +56,8 @@
             <Button Name="update2" Content="Sprawdź aktualizację lub pobierz" Click="update_Click2" Height="60" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,141,0,0" MinWidth="150" Padding="10,1,10,1" BorderBrush="#FF474747" Background="#FF474747" Grid.Row="1" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <TextBlock Name="VersionText2" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="20" Foreground="White" Margin="0,0,5,4" FontWeight="Bold" Grid.Row="1"/>
             <Image HorizontalAlignment="Left" Height="478" Margin="317,0,0,0" VerticalAlignment="Center" Width="888" Source="/logo1.png"/>
+            <TextBlock Visibility="Collapsed" Name="updatetext2" Grid.Column="1" HorizontalAlignment="Left" Margin="1019,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="165" FontFamily="Arial Black" Foreground="White" FontSize="13"><Run Language="pl-pl" Text="Dostępna aktualizacja!"/></TextBlock>
+            <Image Visibility="Collapsed" Name="updateimg2" Grid.Column="1" HorizontalAlignment="Left" Height="16" Margin="998,7,0,0" VerticalAlignment="Top" Width="18" Source="/pobrane.png"/>
 
 
 
@@ -80,7 +83,10 @@
             <TextBlock HorizontalAlignment="Left" Margin="-9,9,0,0" Text="Pamiętaj o aktualizacji launchera" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="189" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.497,0.521"/>
             <TextBlock HorizontalAlignment="Left" Margin="-9,25,0,0" Text="Aktualna wersja:" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="147" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.497,0.521"/>
             <TextBlock Name="launcherwersja" HorizontalAlignment="Left" Margin="86,25,0,0" Text="1.0.0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="77" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.497,0.521"/>
-            <Button Name="updatebutton" Content="Pobierz aktualizację" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="132" IsEnabled="False" Click="updatebutton_Click"/>
+            <Button Name="updatebutton" Content="Pobierz aktualizację" HorizontalAlignment="Left" Margin="293,159,0,0" VerticalAlignment="Top" Width="332" IsEnabled="False" Click="updatebutton_Click" Height="41" Grid.Column="1" Grid.Row="1" FontSize="18"  />
+            <TextBlock Visibility="Collapsed" Name="updatetext" Grid.Column="1" HorizontalAlignment="Left" Margin="1019,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="165" FontFamily="Arial Black" Foreground="White" FontSize="13"><Run Language="pl-pl" Text="Dostępna aktualizacja!"/></TextBlock>
+            <Image Visibility="Collapsed" Name="updateimg" Grid.Column="1" HorizontalAlignment="Left" Height="16" Margin="998,7,0,0" VerticalAlignment="Top" Width="18" Source="/pobrane.png"/>
+
         </Grid>
 
 

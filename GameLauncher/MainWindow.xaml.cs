@@ -364,11 +364,22 @@ namespace GameLauncher
 
             if (updateInfo.ReleasesToApply.Count > 0)
             {
-                MessageBox.Show("Wykryto aktualizację! Przejdź do ustawień aby zaktualizować launcher.");
+                updateimg.Visibility = Visibility.Visible;
+                updatetext.Visibility = Visibility.Visible;
+                updateimg2.Visibility = Visibility.Visible;
+                updatetext2.Visibility = Visibility.Visible;
+                updateimg3.Visibility = Visibility.Visible;
+                updatetext3.Visibility = Visibility.Visible;
                 updatebutton.IsEnabled = true;
             }
             else
             {
+                updateimg.Visibility = Visibility.Collapsed;
+                updatetext.Visibility = Visibility.Collapsed;
+                updateimg2.Visibility = Visibility.Collapsed;
+                updatetext2.Visibility = Visibility.Collapsed;
+                updateimg3.Visibility = Visibility.Collapsed;
+                updatetext3.Visibility = Visibility.Collapsed;
                 updatebutton.IsEnabled = false;
             }
         }
@@ -376,7 +387,8 @@ namespace GameLauncher
         private async void updatebutton_Click(object sender, RoutedEventArgs e)
         {
             await manager.UpdateApp();
-            MessageBox.Show("Launcher został zainstalowany pomyślnie!");
+            MessageBox.Show("Launcher został zainstalowany pomyślnie! Proszę uruchomić launcher ponownie, oraz jeżeli są zainstalowane gry przenieś je na nową wersję!");
+            this.Close();
         }
 
     }

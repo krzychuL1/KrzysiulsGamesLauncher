@@ -375,8 +375,6 @@ namespace GameLauncher
 
         private async void updatebutton_Click(object sender, RoutedEventArgs e)
         {
-            File.Delete(gameExe);
-            File.Delete(gameExe2);
             await manager.UpdateApp();
             MessageBox.Show("Launcher został zainstalowany pomyślnie!");
         }
